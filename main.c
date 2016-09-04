@@ -9,21 +9,37 @@ int main(int argc, char const *argv[]) {
   //./main.out [numElementos] [elem, elem, ...]
   //./main.out 2 4 6 8 10
 
-  int tamLista = argc - 1;
-  int lista[tamLista];
+  if (argc == 1) {
+    int tamLista;
 
-  // convertir de string a integer
-  int i;
-  for (i = 0; i < tamLista; ++i) {
-    lista[i] = atoi(argv[i + 1]);
+    printf("Cuantos valores desea ingresar?\n");
+    scanf("%d", &tamLista);
+
+    int lista[tamLista];
+    int i;
+    for (i = 0; i < tamLista; ++i) {
+      scanf("%d", &lista[i]);
+    }
+    inicializaLista(tamLista, lista);
+    imprimeLista(tamLista, lista);
+
+    metodoBurbuja(tamLista, lista);
+    imprimeLista(tamLista, lista);
+  } else {
+    int tamLista = argc - 1;
+    int lista[tamLista];
+    // convertir de string a integer
+    int i;
+    for (i = 0; i < tamLista; ++i) {
+      lista[i] = atoi(argv[i + 1]);
+    }
+
+    inicializaLista(tamLista, lista);
+    imprimeLista(tamLista, lista);
+
+    metodoBurbuja(tamLista, lista);
+    imprimeLista(tamLista, lista);
   }
-
-  inicializaLista(tamLista, lista);
-  imprimeLista(tamLista, lista);
-
-  metodoBurbuja(tamLista, lista);
-  imprimeLista(tamLista, lista);
-
   return 0;
 }
 
