@@ -21,6 +21,9 @@ int main(int argc, char const *argv[]) {
   inicializaLista(tamLista, lista);
   imprimeLista(tamLista, lista);
 
+  metodoBurbuja(tamLista, lista);
+  imprimeLista(tamLista, lista);
+
   return 0;
 }
 
@@ -36,6 +39,15 @@ void imprimeLista(int tamLista, int lista[]) {
   }
 }
 
-void metodoBurbuja(int tamLista, int lista[]){
-	//
+void metodoBurbuja(int tamLista, int lista[]) {
+  int i, j, aux;
+  for (i = 0; i < tamLista; i++) {
+    for (j = 0; j < tamLista; j++) {
+      if (lista[j] > lista[j + 1]) {
+        aux = lista[j];
+        lista[j] = lista[j + 1];
+        lista[j + 1] = aux;
+      }
+    }
+  }
 }
