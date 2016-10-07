@@ -20,6 +20,7 @@ int main(int argc, char const *argv[]) {
     for (i = 0; i < tamLista; ++i) {
       scanf("%d", &lista[i]);
     }
+
     inicializaLista(tamLista, lista);
     imprimeLista(tamLista, lista);
 
@@ -28,6 +29,7 @@ int main(int argc, char const *argv[]) {
   } else {
     int tamLista = argc - 1;
     int lista[tamLista];
+    
     // convertir de string a integer
     int i;
     for (i = 0; i < tamLista; ++i) {
